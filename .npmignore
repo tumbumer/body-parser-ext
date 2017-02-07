@@ -1,0 +1,18 @@
+# Node
+node_modules
+npm-debug.log
+
+# Editors and IDE
+.idea
+.vscode
+
+# OS
+.DS_Store
+Thumbs.db
+
+# npm
+.editorconfig
+.gitignore
+.npmignore
+dev
+test
