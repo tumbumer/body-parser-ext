@@ -6,7 +6,7 @@ module.exports = {
     es6: true
   },
   extends: 'standard',
-  plugins: ['standard', 'promise'],
+  plugins: ['standard'],
   rules: {
     semi: [2, 'always'],
     'no-extra-semi': 2

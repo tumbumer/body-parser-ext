@@ -1,6 +1,6 @@
 {
   "name": "body-parser-ext",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extended Node.js body parsing middleware",
   "main": "index.js",
   "scripts": {
@@ -26,11 +26,12 @@
   },
   "homepage": "https://github.com/tumbumer/body-parser-ext#readme",
   "dependencies": {
-    "body-parser": "^1.16.0",
+    "body-parser": "^1.17.1",
     "verror": "^1.9.0"
   },
   "devDependencies": {
-    "semistandard": "^9.2.1",
+    "npm-check": "^5.4.0",
+    "semistandard": "^10.0.0",
     "snazzy": "^6.0.0"
   }
 }

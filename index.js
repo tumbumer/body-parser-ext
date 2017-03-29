@@ -1,16 +1,13 @@
 'use strict';
 
-const bodyParser = require('body-parser');
-const VError = require('verror');
+var bodyParser = require('body-parser');
+var VError = require('verror');
 
-exports = module.exports = main;
+var jsonGetter = Object.getOwnPropertyDescriptor(bodyParser, 'json').get;
+delete bodyParser.json;
 
-function main () {
-  return bodyParser();
-}
-
-main.json = function (options) {
-  return [bodyParser.json(options), jsonParseErrorHandler];
+bodyParser.json = function (options) {
+  return [jsonGetter()(options), jsonParseErrorHandler];
 };
 
 function jsonParseErrorHandler (err, req, res, next) {
@@ -27,14 +24,4 @@ function jsonParseErrorHandler (err, req, res, next) {
   next(err);
 }
 
-main.raw = function (options) {
-  return bodyParser.raw(options);
-};
-
-main.text = function (options) {
-  return bodyParser.text(options);
-};
-
-main.urlencoded = function (options) {
-  return bodyParser.urlencoded(options);
-};
+module.exports = bodyParser;
