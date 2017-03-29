@@ -14,5 +14,4 @@ Thumbs.db
 .editorconfig
 .gitignore
 .npmignore
-dev
-test
+.eslintrc.js
