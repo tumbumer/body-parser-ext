@@ -1,6 +1,6 @@
 {
   "name": "body-parser-ext",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Extended Node.js body parsing middleware",
   "main": "index.js",
   "scripts": {
@@ -30,8 +30,9 @@
     "verror": "^1.9.0"
   },
   "devDependencies": {
+    "eslint": "^3.19.0",
     "npm-check": "^5.4.0",
-    "semistandard": "^10.0.0",
-    "snazzy": "^6.0.0"
+    "semistandard": "^11.0.0",
+    "snazzy": "^7.0.0"
   }
 }

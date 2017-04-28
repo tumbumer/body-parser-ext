@@ -2,8 +2,13 @@
 
 An extended version of
 [body-parser](https://www.npmjs.com/package/body-parser)
-middleware with JSON error parse handling using
-[VEerror](https://www.npmjs.com/package/verror).
+middleware with additional error handling using
+[VEerror](https://www.npmjs.com/package/verror)
+
+## Extended error handling
+
+ * JSON parse error
+ * Payload too large error
 
 ## Installation
 
@@ -33,9 +38,14 @@ app.use((req, res) => {
 
 // The 'catch-all' error handler
 app.use((err, req, res, next) => {
-  // Bad Request
+  // Bad request
   if (err.name === 'BodyParseJsonError') {
     return res.status(400).end();
+  }
+
+  // Payload too large
+  if (err.name === 'PayloadTooLargeError') {
+    return res.status(413).end();
   }
 
   // Unexpected error

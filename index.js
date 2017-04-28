@@ -11,6 +11,16 @@ bodyParser.json = function (options) {
 };
 
 function jsonParseErrorHandler (err, req, res, next) {
+  if (err instanceof Error && err.type === 'entity.too.large') {
+    return next(new VError(
+      {
+        name: 'PayloadTooLargeError',
+        cause: err
+      },
+      'Payload too large error'
+    ));
+  }
+
   if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
     return next(new VError(
       {
