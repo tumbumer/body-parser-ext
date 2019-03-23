@@ -1,12 +1,8 @@
 {
   "name": "body-parser-ext",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Extended Node.js body parsing middleware",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/.bin/semistandard --verbose | ./node_modules/.bin/snazzy || true"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tumbumer/body-parser-ext.git"
@@ -14,7 +10,6 @@
   "keywords": [
     "body-parser",
     "express",
-    "expressjs",
     "node",
     "nodejs",
     "verror"
@@ -25,14 +20,27 @@
     "url": "https://github.com/tumbumer/body-parser-ext/issues"
   },
   "homepage": "https://github.com/tumbumer/body-parser-ext#readme",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "test": "echo No tests - no pain",
+    "lint": "./node_modules/.bin/eslint .",
+    "update-dep": "./node_modules/.bin/npm-check -u"
+  },
   "dependencies": {
-    "body-parser": "^1.17.1",
-    "verror": "^1.9.0"
+    "@types/body-parser": "^1.17.0",
+    "body-parser": "^1.18.3",
+    "verror": "^1.10.0"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "npm-check": "^5.4.0",
-    "semistandard": "^11.0.0",
-    "snazzy": "^7.0.0"
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "npm-check": "^5.9.0",
+    "prettier": "^1.16.4"
   }
 }

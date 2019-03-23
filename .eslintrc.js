@@ -1,14 +1,18 @@
 'use strict';
 
 module.exports = {
+  parserOptions: { ecmaVersion: 5 },
   env: {
-    node: true,
-    es6: true
+    es6: false,
+    node: true
   },
-  extends: 'standard',
-  plugins: ['standard'],
+  extends: ['airbnb-base', 'plugin:prettier/recommended'],
+  plugins: ['prettier'],
   rules: {
-    semi: [2, 'always'],
-    'no-extra-semi': 2
+    'consistent-return': 0,
+    'no-use-before-define': ['error', { functions: false }],
+    'no-var': 0,
+    strict: 0,
+    'vars-on-top': 0
   }
 };
